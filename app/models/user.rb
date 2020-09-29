@@ -6,7 +6,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname
     validates :email, format: { with: /@.+/, message: "無効なアドレスです" }
-    validates :password, format: { with: /[a-z\d]{6,}/i, message: "英数字6文字以上で設定してください" }
+    validates :password, format: { with: /[a-z\d]{6,}/i, message: "英数字6文字以上で設定してください" }, length: { minimum: 6 }
     validates :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
     validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
     validates :family_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
