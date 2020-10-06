@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
   def index
-
   end
 
   def new
-    
   end
 
   def create
@@ -12,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:nickname, :email)
   end
