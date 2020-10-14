@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has_many :buys
+- has_many :orders
 
 ## items テーブル
 
@@ -29,7 +29,7 @@
 | category_id             | integer    | null: false                    |
 | status_id               | integer    | null: false                    |
 | shipping_charges_id     | integer    | null: false                    |
-| shipping_prefectures_id | integer    | null: false                    |
+| prefectures_id          | integer    | null: false                    |
 | days_to_ship_id         | integer    | null: false                    |
 | price                   | integer    | null: false                    |
 | user                    | references | null: false, foreign_key: true |
@@ -37,9 +37,9 @@
 ### Association
 
 - belongs_to :user
-- has_one :buy
+- has_one :order
 
-## buy テーブル
+## orders テーブル
 
 | Column        | Type       | Options                        |
 |---------------|------------|--------------------------------|
@@ -62,7 +62,7 @@
 | house_number   | string     | null: false                    |
 | building_name  | string     |                                |
 | phone_number   | string     | null: false                    |
-| buy            | references | null: false, foreign_key: true |
+| order          | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :buy
+- belongs_to :order
