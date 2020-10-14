@@ -10,14 +10,7 @@ RSpec.describe OrderAddress, type: :model do
       it '全ての情報が存在すれば購入できる' do
         expect(@order).to be_valid
       end
-      it 'post_numberが数字3桁+ハイフン+数字4桁なら購入できる' do
-        @order.post_number = '000-0000'
-        expect(@order).to be_valid
-      end
-      it 'phone_numberが11桁以内なら購入できる' do
-        @order.phone_number = '09011112222'
-        expect(@order).to be_valid
-      end
+    
       it 'building_nameが空でも購入できる' do
         @order.building_name = nil
         expect(@order).to be_valid
