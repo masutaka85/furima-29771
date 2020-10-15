@@ -1,4 +1,4 @@
 FactoryBot.define do
-  factory :shipping_charges do
+  factory :address do
   end
 end

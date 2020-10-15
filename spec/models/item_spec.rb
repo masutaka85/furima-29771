@@ -55,10 +55,10 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipping charges must be greater than 1')
       end
-      it 'shipping_prefectures_idが1だと出品できない' do
-        @item.shipping_prefectures_id = 1
+      it 'prefectures_idが1だと出品できない' do
+        @item.prefectures_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping prefectures must be greater than 1')
+        expect(@item.errors.full_messages).to include('Prefectures must be greater than 1')
       end
       it 'days_to_ship_idが1だと出品できない' do
         @item.days_to_ship_id = 1
